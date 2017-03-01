@@ -1,0 +1,33 @@
+{
+  "name": "element-china-area-data",
+  "version": "1.0.0",
+  "description": "Element UI 级联 中国省市区数据",
+  "main": "./dist/app.js",
+  "scripts": {
+    "dev": "webpack -p --progress --hide-modules",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Plortinus/element-china-area-data.git"
+  },
+  "keywords": [
+    "element",
+    "vue",
+    "省市区",
+    "级联"
+  ],
+  "author": "plortinus@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Plortinus/element-china-area-data/issues"
+  },
+  "homepage": "https://github.com/Plortinus/element-china-area-data#readme",
+  "dependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "china-area-data": "^2.0.0",
+    "webpack": "^2.2.1"
+  }
+}
