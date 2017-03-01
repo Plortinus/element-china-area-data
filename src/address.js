@@ -1,4 +1,4 @@
-import REGION_DATA from 'china-area-data'
+var REGION_DATA = require('china-area-data')
 
 // 深拷贝数组
 const cloneArray = function(obj){
@@ -52,4 +52,5 @@ for(let i = 0; i < regionData.length; i++) {
   }
 }
 
-export { provinceAndCityData, regionData }
+module.exports.provinceAndCityData = provinceAndCityData
+module.exports.regionData = regionData
