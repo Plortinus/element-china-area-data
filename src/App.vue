@@ -22,7 +22,8 @@
 </template>
 
 <script>
-  import { provinceAndCityData, regionData } from 'src/address.js'
+  import { provinceAndCityData, regionData } from '../dist/app.js'
+
   export default {
     data () {
       return {
@@ -37,6 +38,10 @@
       handleChange (value) {
         console.log(value)
       }
+    },
+
+    mounted () {
+      console.log(regionData)
     }
   }
 </script>
