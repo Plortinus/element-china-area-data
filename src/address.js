@@ -52,5 +52,4 @@ for(let i = 0; i < regionData.length; i++) {
   }
 }
 
-module.exports.provinceAndCityData = provinceAndCityData
-module.exports.regionData = regionData
+export const regionData2 = REGION_DATA

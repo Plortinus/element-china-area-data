@@ -1,6 +1,6 @@
 {
   "name": "element-china-area-data",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Element UI 级联 中国省市区数据",
   "main": "dist/app.js",
   "scripts": {
