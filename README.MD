@@ -4,8 +4,6 @@
 
   `npm install element-china-area-data -S`
 
-## 在线例子
-
 ## 使用
 
   * 省市二级联动:
