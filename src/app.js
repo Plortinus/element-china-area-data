@@ -30,7 +30,9 @@ for (let i = 0; i < regionData.length; i++) {
       label: REGION_DATA[provinceCode][prop],
     })
   }
-  regionData[i].children = provinceChildren
+  if (provinceChildren.length) {
+    regionData[i].children = provinceChildren
+  }
 }
 
 provinceAndCityData = cloneArray(regionData)
@@ -38,16 +40,20 @@ provinceAndCityData = cloneArray(regionData)
 // 计算区
 for(let i = 0; i < regionData.length; i++) {
   let province = regionData[i].children
-  for(let j = 0;j < province.length; j++) {
-    let cityCode = province[j].value[0]
-    let cityChildren = []
-    for (let prop in REGION_DATA[cityCode]) {
-      cityChildren.push({
-        value: [prop, REGION_DATA[cityCode][prop]],
-        label: REGION_DATA[cityCode][prop],
-      })
+  if (province) {
+    for(let j = 0;j < province.length; j++) {
+      let cityCode = province[j].value[0]
+      let cityChildren = []
+      for (let prop in REGION_DATA[cityCode]) {
+        cityChildren.push({
+          value: [prop, REGION_DATA[cityCode][prop]],
+          label: REGION_DATA[cityCode][prop],
+        })
+      }
+      if (cityChildren.length) {
+        province[j].children = cityChildren
+      }
     }
-    province[j].children = cityChildren
   }
 }
 

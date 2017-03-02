@@ -43,7 +43,9 @@ for (var i = 0; i < regionData.length; i++) {
       label: _chinaAreaData2.default[provinceCode][_prop]
     });
   }
-  regionData[i].children = provinceChildren;
+  if (provinceChildren.length) {
+    regionData[i].children = provinceChildren;
+  }
 }
 
 exports.provinceAndCityData = provinceAndCityData = cloneArray(regionData);
@@ -51,16 +53,20 @@ exports.provinceAndCityData = provinceAndCityData = cloneArray(regionData);
 // 计算区
 for (var _i = 0; _i < regionData.length; _i++) {
   var province = regionData[_i].children;
-  for (var j = 0; j < province.length; j++) {
-    var cityCode = province[j].value[0];
-    var cityChildren = [];
-    for (var _prop2 in _chinaAreaData2.default[cityCode]) {
-      cityChildren.push({
-        value: [_prop2, _chinaAreaData2.default[cityCode][_prop2]],
-        label: _chinaAreaData2.default[cityCode][_prop2]
-      });
+  if (province) {
+    for (var j = 0; j < province.length; j++) {
+      var cityCode = province[j].value[0];
+      var cityChildren = [];
+      for (var _prop2 in _chinaAreaData2.default[cityCode]) {
+        cityChildren.push({
+          value: [_prop2, _chinaAreaData2.default[cityCode][_prop2]],
+          label: _chinaAreaData2.default[cityCode][_prop2]
+        });
+      }
+      if (cityChildren.length) {
+        province[j].children = cityChildren;
+      }
     }
-    province[j].children = cityChildren;
   }
 }
 
