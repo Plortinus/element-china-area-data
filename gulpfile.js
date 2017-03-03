@@ -1,8 +1,8 @@
-var gulp = require('gulp');
-var babel = require('gulp-babel');
+var gulp = require('gulp')
+var babel = require('gulp-babel')
 
-gulp.task('js', function() {
+gulp.task('js', function () {
   return gulp.src(['./src/app.js'])
     .pipe(babel())
-    .pipe(gulp.dest('dist'));
-});
+    .pipe(gulp.dest('dist'))
+})
