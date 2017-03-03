@@ -5,7 +5,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const config = {
   entry: './src/main.js',
   output: {
-    path: resolve(__dirname, './doc'),
+    path: resolve(__dirname, './docs'),
     filename: 'index_bundles.js'
   },
   resolve: {

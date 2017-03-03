@@ -57,4 +57,54 @@ for (let i = 0; i < regionData.length; i++) {
   }
 }
 
-export { provinceAndCityData, regionData }
+// 添加“全部”选项
+const provinceAndCityDataPlus = cloneArray(provinceAndCityData)
+provinceAndCityDataPlus.unshift({
+  value: '',
+  label: '全部'
+})
+for (let i = 0; i < provinceAndCityDataPlus.length; i++) {
+  const province = provinceAndCityDataPlus[i].children
+  if (province && province.length) {
+    province.unshift({
+      value: '',
+      label: '全部'
+    })
+
+    for (let j = 0; j < province.length; j++) {
+      const city = province[j].children
+      if (city && city.length) {
+        city.unshift({
+          value: '',
+          label: '全部'
+        })
+      }
+    }
+  }
+}
+
+const regionDataPlus = cloneArray(regionData)
+regionDataPlus.unshift({
+  value: '',
+  label: '全部'
+})
+for (let i = 0; i < regionDataPlus.length; i++) {
+  const province = regionDataPlus[i].children
+  if (province && province.length) {
+    province.unshift({
+      value: '',
+      label: '全部'
+    })
+
+    for (let j = 0; j < province.length; j++) {
+      const city = province[j].children
+      if (city && city.length) {
+        city.unshift({
+          value: '',
+          label: '全部'
+        })
+      }
+    }
+  }
+}
+export { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus }

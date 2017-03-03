@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.regionData = exports.provinceAndCityData = undefined;
+exports.regionDataPlus = exports.provinceAndCityDataPlus = exports.regionData = exports.provinceAndCityData = undefined;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -70,5 +70,57 @@ for (var _i = 0; _i < regionData.length; _i++) {
   }
 }
 
+// 添加“全部”选项
+var provinceAndCityDataPlus = cloneArray(provinceAndCityData);
+provinceAndCityDataPlus.unshift({
+  value: '',
+  label: '全部'
+});
+for (var _i2 = 0; _i2 < provinceAndCityDataPlus.length; _i2++) {
+  var _province = provinceAndCityDataPlus[_i2].children;
+  if (_province && _province.length) {
+    _province.unshift({
+      value: '',
+      label: '全部'
+    });
+
+    for (var _j = 0; _j < _province.length; _j++) {
+      var city = _province[_j].children;
+      if (city && city.length) {
+        city.unshift({
+          value: '',
+          label: '全部'
+        });
+      }
+    }
+  }
+}
+
+var regionDataPlus = cloneArray(regionData);
+regionDataPlus.unshift({
+  value: '',
+  label: '全部'
+});
+for (var _i3 = 0; _i3 < regionDataPlus.length; _i3++) {
+  var _province2 = regionDataPlus[_i3].children;
+  if (_province2 && _province2.length) {
+    _province2.unshift({
+      value: '',
+      label: '全部'
+    });
+
+    for (var _j2 = 0; _j2 < _province2.length; _j2++) {
+      var _city = _province2[_j2].children;
+      if (_city && _city.length) {
+        _city.unshift({
+          value: '',
+          label: '全部'
+        });
+      }
+    }
+  }
+}
 exports.provinceAndCityData = provinceAndCityData;
 exports.regionData = regionData;
+exports.provinceAndCityDataPlus = provinceAndCityDataPlus;
+exports.regionDataPlus = regionDataPlus;

@@ -13,7 +13,18 @@
 
 ## 使用
 
-  * 省市二级联动:
+```js
+import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, } from 'element-china-area-data'
+```
+
+  1. `provinceAndCityData`是省市二级联动数据（不带“全部”选项）
+  2. `regionData`是省市区三级联动数据（不带“全部”选项）
+  3. `provinceAndCityDataPlus`是省市区三级联动数据（带“全部”选项）
+  4. `regionDataPlus`是省市区三级联动数据（带“全部”选项）
+  5. "全部"选项绑定的value是空字符串`""`
+
+
+  * 省市二级联动（不带“全部”选项）:
     ```js
     <template>
       <div id="app">
@@ -45,7 +56,39 @@
     </script>
     ```
 
-    * 省市区三级联动
+    * 省市二级联动（带“全部”选项）:
+      ```js
+      <template>
+        <div id="app">
+          <el-cascader
+            size="large"
+            :options="options"
+            v-model="selectedOptions"
+            @change="handleChange">
+          </el-cascader>
+        </div>
+      </template>
+
+      <script>
+        import { provinceAndCityDataPlus } from 'element-china-area-data'
+        export default {
+          data () {
+            return {
+              options: provinceAndCityDataPlus,
+              selectedOptions: []
+            }
+          },
+
+          methods: {
+            handleChange (value) {
+              console.log(value)
+            }
+          }
+        }
+      </script>
+      ```
+
+    * 省市区三级联动（不带“全部”选项）
 
     ```js
     <template>
@@ -65,6 +108,39 @@
         data () {
           return {
             options: regionData,
+            selectedOptions: []
+          }
+        },
+
+        methods: {
+          handleChange (value) {
+            console.log(value)
+          }
+        }
+      }
+    </script>
+    ```
+
+    * 省市区三级联动（带“全部”选项）
+
+    ```js
+    <template>
+      <div id="app">
+        <el-cascader
+          size="large"
+          :options="options"
+          v-model="selectedOptions"
+          @change="handleChange">
+        </el-cascader>
+      </div>
+    </template>
+
+    <script>
+      import { regionDataPlus } from 'element-china-area-data'
+      export default {
+        data () {
+          return {
+            options: regionDataPlus,
             selectedOptions: []
           }
         },
