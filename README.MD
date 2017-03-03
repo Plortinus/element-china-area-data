@@ -161,3 +161,9 @@ value是一个数组，第一项是区域码，第二项是名称，例：`["110
 ## 数据来源
 
 [china-area-data](https://github.com/airyland/china-area-data)
+
+## 开发过程（ :joy: 需要优化）
+
+`npm run dev` + `npm run build` 是开发
+
+`npm run build` + `npm run example` 是准备发布
