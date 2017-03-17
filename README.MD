@@ -14,7 +14,7 @@
 ## 使用
 
 ```js
-import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus } from 'element-china-area-data'
+import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText } from 'element-china-area-data'
 ```
 
   1. `provinceAndCityData`是省市二级联动数据（不带“全部”选项）
@@ -22,6 +22,7 @@ import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlu
   3. `provinceAndCityDataPlus`是省市区三级联动数据（带“全部”选项）
   4. `regionDataPlus`是省市区三级联动数据（带“全部”选项）
   5. "全部"选项绑定的value是空字符串`""`
+  6. `CodeToText`是个大对象，属性是区域码，属性值是汉字 用法例如：`CodeToText['110000']`输出`北京市`
 
 
   * 省市二级联动（不带“全部”选项）:
@@ -156,7 +157,7 @@ import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlu
 
 ## 绑定value格式
 
-value是一个数组，第一项是区域码，第二项是名称，例：`["110000", "北京市"]`
+value是区域码`"110000"`
 
 ## 数据来源
 

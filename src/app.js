@@ -1,4 +1,5 @@
 import REGION_DATA from 'china-area-data'
+const CodeToText = {}
 // 深拷贝数组
 const cloneArray = function (obj) {
   const newArray = []
@@ -15,20 +16,22 @@ let provinceAndCityData = []
 // 计算省
 for (const prop in REGION_DATA[rootCode]) {
   regionData.push({
-    value: [prop, REGION_DATA[rootCode][prop]],
+    value: prop,
     label: REGION_DATA[rootCode][prop]
   })
+  CodeToText[prop] = REGION_DATA[rootCode][prop]
 }
 
 // 计算市
 for (let i = 0; i < regionData.length; i++) {
-  const provinceCode = regionData[i].value[0]
+  const provinceCode = regionData[i].value
   const provinceChildren = []
   for (const prop in REGION_DATA[provinceCode]) {
     provinceChildren.push({
-      value: [prop, REGION_DATA[provinceCode][prop]],
+      value: prop,
       label: REGION_DATA[provinceCode][prop]
     })
+    CodeToText[prop] = REGION_DATA[provinceCode][prop]
   }
   if (provinceChildren.length) {
     regionData[i].children = provinceChildren
@@ -42,13 +45,14 @@ for (let i = 0; i < regionData.length; i++) {
   const province = regionData[i].children
   if (province) {
     for (let j = 0; j < province.length; j++) {
-      const cityCode = province[j].value[0]
+      const cityCode = province[j].value
       const cityChildren = []
       for (const prop in REGION_DATA[cityCode]) {
         cityChildren.push({
-          value: [prop, REGION_DATA[cityCode][prop]],
+          value: prop,
           label: REGION_DATA[cityCode][prop]
         })
+        CodeToText[prop] = REGION_DATA[cityCode][prop]
       }
       if (cityChildren.length) {
         province[j].children = cityChildren
@@ -107,4 +111,4 @@ for (let i = 0; i < regionDataPlus.length; i++) {
     }
   }
 }
-export { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus }
+export { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText }

@@ -10,13 +10,8 @@
       </el-cascader>
     </div>
     <div class="bind">
-      绑定值：
-      <span v-if="selectedOptions1[0]">
-        ["{{selectedOptions1[0][0]}}","{{selectedOptions1[0][1]}}"]
-        <span v-if="selectedOptions1[1]">
-          ,["{{selectedOptions1[1][0]}}","{{selectedOptions1[1][1]}}"]
-        </span>
-      </span>
+      <div>绑定值：{{selectedOptions1}}</div>
+      <div>区域码转汉字：{{CodeToText[selectedOptions1[0]]}},{{CodeToText[selectedOptions1[1]]}}</div>
     </div>
     <div class="three">
       二级联动(带有“全部”选项)
@@ -28,17 +23,13 @@
       </el-cascader>
     </div>
     <div class="bind">
-      绑定值：
-      <span v-if="selectedOptions3[0]">
-        ["{{selectedOptions3[0][0]}}","{{selectedOptions3[0][1]}}"]
-        <span v-if="selectedOptions3[1]">
-          ,["{{selectedOptions3[1][0]}}","{{selectedOptions3[1][1]}}"]
-        </span>
-      </span>
+      <div>绑定值：{{selectedOptions3}}</div>
+      <div>区域码转汉字：{{CodeToText[selectedOptions3[0]]}},{{CodeToText[selectedOptions3[1]]}}</div>
     </div>
     <div class="three">
       三级联动（不带“全部”选项）
       <el-cascader
+        class="long"
         size="large"
         :options="regionData"
         v-model="selectedOptions2"
@@ -46,55 +37,42 @@
       </el-cascader>
     </div>
     <div class="bind">
-      绑定值：
-      <span v-if="selectedOptions2[0]">
-        ["{{selectedOptions2[0][0]}}","{{selectedOptions2[0][1]}}"]
-        <span v-if="selectedOptions2[1]">
-          ,["{{selectedOptions2[1][0]}}","{{selectedOptions2[1][1]}}"]
-        </span>
-        <span v-if="selectedOptions2[2]">
-          ,["{{selectedOptions2[2][0]}}","{{selectedOptions2[2][1]}}"]
-        </span>
-      </span>
+      <div>绑定值：{{selectedOptions2}}</div>
+      <div>区域码转汉字：{{CodeToText[selectedOptions2[0]]}},{{CodeToText[selectedOptions2[1]]}},{{CodeToText[selectedOptions2[2]]}}</div>
     </div>
     <div class="three">
       三级联动(带"全部选项")
       <el-cascader
         size="large"
+        class="long"
         :options="regionDataPlus"
         v-model="selectedOptions4"
         @change="handleChange">
       </el-cascader>
     </div>
     <div class="bind">
-      绑定值：
-      <span v-if="selectedOptions4[0]">
-        ["{{selectedOptions4[0][0]}}","{{selectedOptions4[0][1]}}"]
-        <span v-if="selectedOptions4[1]">
-          ,["{{selectedOptions4[1][0]}}","{{selectedOptions4[1][1]}}"]
-        </span>
-        <span v-if="selectedOptions4[2]">
-          ,["{{selectedOptions4[2][0]}}","{{selectedOptions4[2][1]}}"]
-        </span>
-      </span>
+      <div>绑定值：{{selectedOptions4}}</div>
+      <div>区域码转汉字：{{CodeToText[selectedOptions4[0]]}},{{CodeToText[selectedOptions4[1]]}},{{CodeToText[selectedOptions4[2]]}}</div>
     </div>
   </div>
 </template>
 
 <script>
-  import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus } from '../dist/app.js'
+  import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText } from '../dist/app.js'
 
   export default {
     data () {
       return {
+        CodeToText: CodeToText,
+        BeiJing: CodeToText['110000'],
         provinceAndCityData: provinceAndCityData,
         provinceAndCityDataPlus: provinceAndCityDataPlus,
         regionData: regionData,
         regionDataPlus: regionDataPlus,
-        selectedOptions1: [],
-        selectedOptions2: [],
-        selectedOptions3: [],
-        selectedOptions4: []
+        selectedOptions1: ['110000', '110100'],
+        selectedOptions2: ['120000', '120100', '120101'],
+        selectedOptions3: ['130000', ''],
+        selectedOptions4: ['120000', '120100', '']
       }
     },
 
@@ -111,6 +89,9 @@
 </script>
 
 <style>
+  .long {
+    width: 250px;
+  }
   .area {
     padding-top: 50px;
     margin: 0 auto;
