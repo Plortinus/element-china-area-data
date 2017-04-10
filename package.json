@@ -1,6 +1,6 @@
 {
   "name": "element-china-area-data",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Element UI 级联 中国省市区数据",
   "main": "./dist/app.js",
   "scripts": {
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/Plortinus/element-china-area-data#readme",
   "dependencies": {
-    "china-area-data": "^2.0.0"
+    "china-area-data": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -47,9 +47,9 @@
     "style-loader": "^0.13.1",
     "uglifyjs-webpack-plugin": "^0.2.2",
     "url-loader": "^0.5.7",
-    "vue": "^2.2.4",
+    "vue": "^2.2.6",
     "vue-loader": "^11.1.2",
-    "vue-template-compiler": "^2.2.4",
+    "vue-template-compiler": "^2.2.6",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
   }
