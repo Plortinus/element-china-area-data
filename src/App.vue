@@ -12,6 +12,7 @@
     <div class="bind">
       <div>绑定值：{{selectedOptions1}}</div>
       <div>区域码转汉字：{{CodeToText[selectedOptions1[0]]}},{{CodeToText[selectedOptions1[1]]}}</div>
+      <div>汉字转区域码：{{convertTextToCode(CodeToText[selectedOptions1[0]], CodeToText[selectedOptions1[1]])}}</div>
     </div>
     <div class="three">
       二级联动(带有“全部”选项)
@@ -25,6 +26,7 @@
     <div class="bind">
       <div>绑定值：{{selectedOptions3}}</div>
       <div>区域码转汉字：{{CodeToText[selectedOptions3[0]]}},{{CodeToText[selectedOptions3[1]]}}</div>
+      <div>汉字转区域码：{{convertTextToCode(CodeToText[selectedOptions3[0]], CodeToText[selectedOptions3[1]])}}</div>
     </div>
     <div class="three">
       三级联动（不带“全部”选项）
@@ -39,6 +41,7 @@
     <div class="bind">
       <div>绑定值：{{selectedOptions2}}</div>
       <div>区域码转汉字：{{CodeToText[selectedOptions2[0]]}},{{CodeToText[selectedOptions2[1]]}},{{CodeToText[selectedOptions2[2]]}}</div>
+      <div>汉字转区域码：{{convertTextToCode(CodeToText[selectedOptions2[0]], CodeToText[selectedOptions2[1]], CodeToText[selectedOptions2[2]])}}</div>
     </div>
     <div class="three">
       三级联动(带"全部选项")
@@ -53,17 +56,20 @@
     <div class="bind">
       <div>绑定值：{{selectedOptions4}}</div>
       <div>区域码转汉字：{{CodeToText[selectedOptions4[0]]}},{{CodeToText[selectedOptions4[1]]}},{{CodeToText[selectedOptions4[2]]}}</div>
+      <div>汉字转区域码：{{convertTextToCode(CodeToText[selectedOptions4[0]], CodeToText[selectedOptions4[1]], CodeToText[selectedOptions4[2]])}}</div>
+    </div>
     </div>
   </div>
 </template>
 
 <script>
-  import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText } from '../dist/app.js'
+  import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText, TextToCode } from '../dist/app.js'
 
   export default {
     data () {
       return {
         CodeToText: CodeToText,
+        TextToCode: TextToCode,
         BeiJing: CodeToText['110000'],
         provinceAndCityData: provinceAndCityData,
         provinceAndCityDataPlus: provinceAndCityDataPlus,
@@ -79,6 +85,21 @@
     methods: {
       handleChange (value) {
         console.log(value)
+      },
+      convertTextToCode(provinceText, cityText, regionText){
+        let code='';
+        if(provinceText && this.TextToCode[provinceText]){
+          let province=this.TextToCode[provinceText];
+          code+=province.code+', ';
+          if (cityText && province[cityText]) {
+            let city=province[cityText]
+            code+=city.code+', ';
+            if (regionText && city[regionText]) {
+              code+=city[regionText].code;
+            }
+          }
+        }
+        return code;
       }
     },
 
