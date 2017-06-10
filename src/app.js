@@ -44,7 +44,7 @@ for (let i = 0; i < regionData.length; i++) {
       label: REGION_DATA[provinceCode][prop]
     })
     CodeToText[prop] = REGION_DATA[provinceCode][prop]
-    TextToCode[provinceText][REGION_DATA[provinceCode][prop]]={
+    TextToCode[provinceText][REGION_DATA[provinceCode][prop]] = {
       code: prop
     }
     TextToCode[provinceText][REGION_DATA[provinceCode][prop]]['全部'] = {
@@ -73,7 +73,7 @@ for (let i = 0; i < regionData.length; i++) {
           label: REGION_DATA[cityCode][prop]
         })
         CodeToText[prop] = REGION_DATA[cityCode][prop]
-        TextToCode[provinceText][cityText] = {
+        TextToCode[provinceText][cityText][REGION_DATA[cityCode][prop]] = {
           code: prop
         }
       }
@@ -135,4 +135,4 @@ for (let i = 0; i < regionDataPlus.length; i++) {
     }
   }
 }
-export { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText }
+export { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText, TextToCode }
