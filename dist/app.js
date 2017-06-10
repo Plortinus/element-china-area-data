@@ -14,6 +14,7 @@ var _chinaAreaData2 = _interopRequireDefault(_chinaAreaData);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CodeToText = {};
+var TextToCode = {};
 // 深拷贝数组
 var cloneArray = function cloneArray(obj) {
   var newArray = [];
@@ -33,11 +34,15 @@ for (var prop in _chinaAreaData2.default[rootCode]) {
     label: _chinaAreaData2.default[rootCode][prop]
   });
   CodeToText[prop] = _chinaAreaData2.default[rootCode][prop];
+  TextToCode[_chinaAreaData2.default[rootCode][prop]] = {
+    code: prop
+  };
 }
 
 // 计算市
 for (var i = 0; i < regionData.length; i++) {
   var provinceCode = regionData[i].value;
+  var provinceText = regionData[i].label;
   var provinceChildren = [];
   for (var _prop in _chinaAreaData2.default[provinceCode]) {
     provinceChildren.push({
@@ -45,20 +50,25 @@ for (var i = 0; i < regionData.length; i++) {
       label: _chinaAreaData2.default[provinceCode][_prop]
     });
     CodeToText[_prop] = _chinaAreaData2.default[provinceCode][_prop];
+    TextToCode[provinceText][_chinaAreaData2.default[provinceCode][_prop]] = {
+      code: _prop
+    };
   }
   if (provinceChildren.length) {
     regionData[i].children = provinceChildren;
   }
 }
 
-exports.provinceAndCityData = provinceAndCityData = cloneArray(regionData);
+exports.provinceAndCityData = provinceAndCityData = cloneArray(regionData
 
 // 计算区
-for (var _i = 0; _i < regionData.length; _i++) {
+);for (var _i = 0; _i < regionData.length; _i++) {
   var province = regionData[_i].children;
+  var _provinceText = regionData[_i].label;
   if (province) {
     for (var j = 0; j < province.length; j++) {
       var cityCode = province[j].value;
+      var cityText = province[j].label;
       var cityChildren = [];
       for (var _prop2 in _chinaAreaData2.default[cityCode]) {
         cityChildren.push({
@@ -66,6 +76,9 @@ for (var _i = 0; _i < regionData.length; _i++) {
           label: _chinaAreaData2.default[cityCode][_prop2]
         });
         CodeToText[_prop2] = _chinaAreaData2.default[cityCode][_prop2];
+        TextToCode[_provinceText][cityText] = {
+          code: _prop2
+        };
       }
       if (cityChildren.length) {
         province[j].children = cityChildren;
@@ -73,6 +86,9 @@ for (var _i = 0; _i < regionData.length; _i++) {
     }
   }
 }
+
+//TODO: for DEBUG
+console.log(TextToCode);
 
 // 添加“全部”选项
 var provinceAndCityDataPlus = cloneArray(provinceAndCityData);
