@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.CodeToText = exports.regionDataPlus = exports.provinceAndCityDataPlus = exports.regionData = exports.provinceAndCityData = undefined;
+exports.TextToCode = exports.CodeToText = exports.regionDataPlus = exports.provinceAndCityDataPlus = exports.regionData = exports.provinceAndCityData = undefined;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -85,7 +85,7 @@ exports.provinceAndCityData = provinceAndCityData = cloneArray(regionData
           label: _chinaAreaData2.default[cityCode][_prop2]
         });
         CodeToText[_prop2] = _chinaAreaData2.default[cityCode][_prop2];
-        TextToCode[_provinceText][cityText] = {
+        TextToCode[_provinceText][cityText][_chinaAreaData2.default[cityCode][_prop2]] = {
           code: _prop2
         };
       }
@@ -95,9 +95,6 @@ exports.provinceAndCityData = provinceAndCityData = cloneArray(regionData
     }
   }
 }
-
-//TODO: for DEBUG
-console.log(TextToCode);
 
 // 添加“全部”选项
 var provinceAndCityDataPlus = cloneArray(provinceAndCityData);
@@ -154,3 +151,4 @@ exports.regionData = regionData;
 exports.provinceAndCityDataPlus = provinceAndCityDataPlus;
 exports.regionDataPlus = regionDataPlus;
 exports.CodeToText = CodeToText;
+exports.TextToCode = TextToCode;
