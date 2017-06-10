@@ -14,6 +14,10 @@ const cloneArray = function (obj) {
 const rootCode = '86'
 const regionData = []
 let provinceAndCityData = []
+
+
+CodeToText[''] = '全部'
+
 // 计算省
 for (const prop in REGION_DATA[rootCode]) {
   regionData.push({
@@ -23,6 +27,9 @@ for (const prop in REGION_DATA[rootCode]) {
   CodeToText[prop] = REGION_DATA[rootCode][prop]
   TextToCode[REGION_DATA[rootCode][prop]] = {
     code: prop
+  }
+  TextToCode[REGION_DATA[rootCode][prop]]['全部'] = {
+    code: ''
   }
 }
 
@@ -39,6 +46,9 @@ for (let i = 0; i < regionData.length; i++) {
     CodeToText[prop] = REGION_DATA[provinceCode][prop]
     TextToCode[provinceText][REGION_DATA[provinceCode][prop]]={
       code: prop
+    }
+    TextToCode[provinceText][REGION_DATA[provinceCode][prop]]['全部'] = {
+      code: ''
     }
   }
   if (provinceChildren.length) {
@@ -73,7 +83,6 @@ for (let i = 0; i < regionData.length; i++) {
     }
   }
 }
-
 
 
 // 添加“全部”选项
