@@ -27,6 +27,9 @@ var cloneArray = function cloneArray(obj) {
 var rootCode = '86';
 var regionData = [];
 var provinceAndCityData = [];
+
+CodeToText[''] = '全部';
+
 // 计算省
 for (var prop in _chinaAreaData2.default[rootCode]) {
   regionData.push({
@@ -36,6 +39,9 @@ for (var prop in _chinaAreaData2.default[rootCode]) {
   CodeToText[prop] = _chinaAreaData2.default[rootCode][prop];
   TextToCode[_chinaAreaData2.default[rootCode][prop]] = {
     code: prop
+  };
+  TextToCode[_chinaAreaData2.default[rootCode][prop]]['全部'] = {
+    code: ''
   };
 }
 
@@ -52,6 +58,9 @@ for (var i = 0; i < regionData.length; i++) {
     CodeToText[_prop] = _chinaAreaData2.default[provinceCode][_prop];
     TextToCode[provinceText][_chinaAreaData2.default[provinceCode][_prop]] = {
       code: _prop
+    };
+    TextToCode[provinceText][_chinaAreaData2.default[provinceCode][_prop]]['全部'] = {
+      code: ''
     };
   }
   if (provinceChildren.length) {
