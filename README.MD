@@ -23,6 +23,7 @@ import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlu
   4. `regionDataPlus`是省市区三级联动数据（带“全部”选项）
   5. "全部"选项绑定的value是空字符串`""`
   6. `CodeToText`是个大对象，属性是区域码，属性值是汉字 用法例如：`CodeToText['110000']`输出`北京市`
+  7. `TextToCode`是个大对象，属性是汉字，属性值是区域码 用法例如：`TextToCode['北京市'].code`输出`110000`,`TextToCode['北京市']['市辖区'].code`输出`110100`,`TextToCode['北京市']['市辖区']['朝阳区'].code`输出`110105`
 
 
   * 省市二级联动（不带“全部”选项）:

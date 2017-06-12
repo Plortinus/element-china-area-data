@@ -86,25 +86,27 @@
       handleChange (value) {
         console.log(value)
       },
-      convertTextToCode(provinceText, cityText, regionText){
-        let code='';
-        if(provinceText && this.TextToCode[provinceText]){
-          let province=this.TextToCode[provinceText];
-          code+=province.code+', ';
+      convertTextToCode (provinceText, cityText, regionText) {
+        let code = ''
+        if (provinceText && this.TextToCode[provinceText]) {
+          const province = this.TextToCode[provinceText]
+          code += province.code + ', '
           if (cityText && province[cityText]) {
-            let city=province[cityText]
-            code+=city.code+', ';
+            const city = province[cityText]
+            code += city.code + ', '
             if (regionText && city[regionText]) {
-              code+=city[regionText].code;
+              code += city[regionText].code
             }
           }
         }
-        return code;
+        return code
       }
     },
 
     mounted () {
-      console.log(regionData)
+      console.log(this.TextToCode['北京市'].code)
+      console.log(this.TextToCode['北京市']['市辖区'].code)
+      console.log(this.TextToCode['北京市']['市辖区']['朝阳区'].code)
     }
   }
 </script>

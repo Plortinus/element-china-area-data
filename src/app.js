@@ -15,7 +15,6 @@ const rootCode = '86'
 const regionData = []
 let provinceAndCityData = []
 
-
 CodeToText[''] = '全部'
 
 // 计算省
@@ -83,7 +82,6 @@ for (let i = 0; i < regionData.length; i++) {
     }
   }
 }
-
 
 // 添加“全部”选项
 const provinceAndCityDataPlus = cloneArray(provinceAndCityData)
