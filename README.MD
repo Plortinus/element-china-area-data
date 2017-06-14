@@ -14,7 +14,7 @@
 ## 使用
 
 ```js
-import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText } from 'element-china-area-data'
+import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText, TextToCode } from 'element-china-area-data'
 ```
 
   1. `provinceAndCityData`是省市二级联动数据（不带“全部”选项）
