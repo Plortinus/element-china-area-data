@@ -68,7 +68,8 @@ const config = {
         changeOrigin: true,
         pathRewrite: { '^/api': '' }
       }
-    }
+    },
+    open: true
   },
   devtool: '#eval-source-map'
 }

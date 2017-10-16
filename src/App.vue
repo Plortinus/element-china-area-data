@@ -64,17 +64,18 @@
 
 <script>
   import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText, TextToCode } from '../dist/app.js'
+  // import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText, TextToCode } from './app.js'
 
   export default {
     data () {
       return {
-        CodeToText: CodeToText,
-        TextToCode: TextToCode,
+        CodeToText,
+        TextToCode,
         BeiJing: CodeToText['110000'],
-        provinceAndCityData: provinceAndCityData,
-        provinceAndCityDataPlus: provinceAndCityDataPlus,
-        regionData: regionData,
-        regionDataPlus: regionDataPlus,
+        provinceAndCityData,
+        provinceAndCityDataPlus,
+        regionData,
+        regionDataPlus,
         selectedOptions1: ['110000', '110100'],
         selectedOptions2: ['120000', '120100', '120101'],
         selectedOptions3: ['130000', ''],

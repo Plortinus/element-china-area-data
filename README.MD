@@ -162,10 +162,10 @@ value是区域码`"110000"`
 
 ## 数据来源
 
-[china-area-data v3.0.0](https://github.com/airyland/china-area-data)
+[china-area-data v4.0.0](https://github.com/airyland/china-area-data)
 
-## 开发过程（ :joy: 需要优化）
+## 开发过程
 
-`npm run dev` + `npm run build` 是开发
+`npm run dev` 是开发
 
-`npm run build` + `npm run example` 是准备发布
+`npm run build` + `npm run docs` 是准备发布

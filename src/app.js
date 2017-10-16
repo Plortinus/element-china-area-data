@@ -1,16 +1,18 @@
 import REGION_DATA from 'china-area-data'
-const CodeToText = {}
-const TextToCode = {}
+
 // 深拷贝数组
 const cloneArray = function (obj) {
   const newArray = []
   for (const i in obj) {
-    newArray[i] = typeof obj[i] === 'object'
-    ? cloneArray(obj[i]) : obj[i]
+    newArray[i] = typeof obj[i] === 'object' ? cloneArray(obj[i]) : obj[i]
   }
   return newArray
 }
 
+// code转汉字大对象
+const CodeToText = {}
+// 汉字转code大对象
+const TextToCode = {}
 const rootCode = '86'
 const regionData = []
 let provinceAndCityData = []
@@ -33,7 +35,7 @@ for (const prop in REGION_DATA[rootCode]) {
 }
 
 // 计算市
-for (let i = 0; i < regionData.length; i++) {
+for (let i = 0, len = regionData.length; i < len; i++) {
   const provinceCode = regionData[i].value
   const provinceText = regionData[i].label
   const provinceChildren = []
@@ -58,11 +60,11 @@ for (let i = 0; i < regionData.length; i++) {
 provinceAndCityData = cloneArray(regionData)
 
 // 计算区
-for (let i = 0; i < regionData.length; i++) {
+for (let i = 0, len = regionData.length; i < len; i++) {
   const province = regionData[i].children
   const provinceText = regionData[i].label
   if (province) {
-    for (let j = 0; j < province.length; j++) {
+    for (let j = 0, len = province.length; j < len; j++) {
       const cityCode = province[j].value
       const cityText = province[j].label
       const cityChildren = []
@@ -89,7 +91,7 @@ provinceAndCityDataPlus.unshift({
   value: '',
   label: '全部'
 })
-for (let i = 0; i < provinceAndCityDataPlus.length; i++) {
+for (let i = 0, len = provinceAndCityDataPlus.length; i < len; i++) {
   const province = provinceAndCityDataPlus[i].children
   if (province && province.length) {
     province.unshift({
@@ -97,7 +99,7 @@ for (let i = 0; i < provinceAndCityDataPlus.length; i++) {
       label: '全部'
     })
 
-    for (let j = 0; j < province.length; j++) {
+    for (let j = 0, len = province.length; j < len; j++) {
       const city = province[j].children
       if (city && city.length) {
         city.unshift({
@@ -114,7 +116,7 @@ regionDataPlus.unshift({
   value: '',
   label: '全部'
 })
-for (let i = 0; i < regionDataPlus.length; i++) {
+for (let i = 0, len = regionDataPlus.length; i < len; i++) {
   const province = regionDataPlus[i].children
   if (province && province.length) {
     province.unshift({
@@ -122,7 +124,7 @@ for (let i = 0; i < regionDataPlus.length; i++) {
       label: '全部'
     })
 
-    for (let j = 0; j < province.length; j++) {
+    for (let j = 0, len = province.length; j < len; j++) {
       const city = province[j].children
       if (city && city.length) {
         city.unshift({
