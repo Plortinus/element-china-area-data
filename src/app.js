@@ -2,11 +2,7 @@ import REGION_DATA from 'china-area-data'
 
 // 深拷贝数组
 const cloneArray = function (obj) {
-  const newArray = []
-  for (const i in obj) {
-    newArray[i] = typeof obj[i] === 'object' ? cloneArray(obj[i]) : obj[i]
-  }
-  return newArray
+  return obj.slice(0)
 }
 
 // code转汉字大对象
