@@ -1,7 +1,7 @@
 <template>
   <div class="area">
     <div>
-      二级联动（不带“全部”选项）
+      <span class="imp">1. 二级联动（不带“全部”选项）</span>
       <el-cascader
         size="large"
         :options="provinceAndCityData"
@@ -15,7 +15,7 @@
       <div>汉字转区域码：{{convertTextToCode(CodeToText[selectedOptions1[0]], CodeToText[selectedOptions1[1]])}}</div>
     </div>
     <div class="three">
-      二级联动(带有“全部”选项)
+      <span class="imp">2. 二级联动(带有“全部”选项)</span>
       <el-cascader
         size="large"
         :options="provinceAndCityDataPlus"
@@ -29,7 +29,7 @@
       <div>汉字转区域码：{{convertTextToCode(CodeToText[selectedOptions3[0]], CodeToText[selectedOptions3[1]])}}</div>
     </div>
     <div class="three">
-      三级联动（不带“全部”选项）
+      <span class="imp">3. 三级联动（不带“全部”选项）</span>
       <el-cascader
         class="long"
         size="large"
@@ -44,7 +44,7 @@
       <div>汉字转区域码：{{convertTextToCode(CodeToText[selectedOptions2[0]], CodeToText[selectedOptions2[1]], CodeToText[selectedOptions2[2]])}}</div>
     </div>
     <div class="three">
-      三级联动(带"全部选项")
+      <span class="imp">4. 三级联动(带"全部选项")</span>
       <el-cascader
         size="large"
         class="long"
@@ -58,13 +58,11 @@
       <div>区域码转汉字：{{CodeToText[selectedOptions4[0]]}},{{CodeToText[selectedOptions4[1]]}},{{CodeToText[selectedOptions4[2]]}}</div>
       <div>汉字转区域码：{{convertTextToCode(CodeToText[selectedOptions4[0]], CodeToText[selectedOptions4[1]], CodeToText[selectedOptions4[2]])}}</div>
     </div>
-    </div>
   </div>
 </template>
 
 <script>
   import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText, TextToCode } from '../dist/app.js'
-  // import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText, TextToCode } from './app.js'
 
   export default {
     data () {
@@ -126,5 +124,10 @@
   }
   .bind {
     margin-top: 20px;
+    line-height: 40px;
+    text-indent: 15px;
+  }
+  .imp {
+    color: #409EFF;
   }
 </style>

@@ -1,13 +1,10 @@
+'use strict'
 const { join, resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 const config = {
+  mode: 'development',
   entry: './src/main.js',
-  output: {
-    path: resolve(__dirname, './docs'),
-    filename: 'index_bundles.js'
-  },
   resolve: {
     // 配置别名，在项目中可缩减引用路径
     alias: {
@@ -54,8 +51,8 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      inject: 'body' }),
-    new UglifyJSPlugin()
+      inject: 'body'
+    })
   ],
   devServer: {
     host: '127.0.0.1',

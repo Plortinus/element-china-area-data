@@ -1,7 +1,9 @@
+'use strict'
+
 const { resolve } = require('path')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 const config = {
+  mode: 'production',
   entry: './src/app.js',
   output: {
     path: resolve(__dirname, './dist'),
@@ -16,10 +18,7 @@ const config = {
         exclude: /node_modules/
       }
     ]
-  },
-  plugins: [
-    new UglifyJSPlugin()
-  ]
+  }
 }
 
 module.exports = config

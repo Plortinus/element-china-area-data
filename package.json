@@ -1,11 +1,11 @@
 {
   "name": "element-china-area-data",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Element UI 级联 中国省市区数据",
   "main": "./dist/app.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.config.js --inline --hot",
-    "docs": "webpack --config webpack.dev.config.js --progress --hide-modules",
+    "docs": "webpack --config webpack.doc.config.js --progress --hide-modules",
     "build": "webpack --config webpack.build.config.js --progress --hide-modules",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -36,20 +36,20 @@
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.6.0",
     "css-loader": "^0.28.4",
-    "element-ui": "^1.4.6",
+    "element-ui": "^2.3.6",
     "eslint": "^4.9.0",
-    "eslint-config-vue": "^2.0.2",
-    "eslint-plugin-vue": "^2.0.1",
+    "eslint-plugin-vue": "^4.5.0",
     "file-loader": "^1.1.5",
     "html-loader": "^0.5.1",
-    "html-webpack-plugin": "^2.28.0",
-    "style-loader": "^0.19.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.0.0-beta.3",
-    "url-loader": "^0.6.2",
+    "url-loader": "^1.0.1",
     "vue": "^2.4.4",
-    "vue-loader": "^13.3.0",
+    "vue-loader": "^14.2.2",
     "vue-template-compiler": "^2.4.4",
-    "webpack": "^3.7.1",
-    "webpack-dev-server": "^2.9.2"
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15",
+    "webpack-dev-server": "^3.1.3"
   }
 }

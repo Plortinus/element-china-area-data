@@ -13,27 +13,26 @@ const cloneArray = function (obj) {
 const CodeToText = {}
 // 汉字转code大对象
 const TextToCode = {}
-const rootCode = '86'
+const provinceObject = REGION_DATA['86'] // 省份对象
 const regionData = []
 let provinceAndCityData = []
 
 CodeToText[''] = '全部'
 
 // 计算省
-for (const prop in REGION_DATA[rootCode]) {
+for (const prop in provinceObject) {
   regionData.push({
-    value: prop,
-    label: REGION_DATA[rootCode][prop]
+    value: prop, // 省份code值
+    label: provinceObject[prop] // 省份汉字
   })
-  CodeToText[prop] = REGION_DATA[rootCode][prop]
-  TextToCode[REGION_DATA[rootCode][prop]] = {
+  CodeToText[prop] = provinceObject[prop]
+  TextToCode[provinceObject[prop]] = {
     code: prop
   }
-  TextToCode[REGION_DATA[rootCode][prop]]['全部'] = {
+  TextToCode[provinceObject[prop]]['全部'] = {
     code: ''
   }
 }
-
 // 计算市
 for (let i = 0, len = regionData.length; i < len; i++) {
   const provinceCode = regionData[i].value
@@ -56,7 +55,6 @@ for (let i = 0, len = regionData.length; i < len; i++) {
     regionData[i].children = provinceChildren
   }
 }
-
 provinceAndCityData = cloneArray(regionData)
 
 // 计算区
