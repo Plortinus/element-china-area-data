@@ -1,6 +1,7 @@
 'use strict'
 const { join, resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const VueLoaderPlugin = require("vue-loader/lib/plugin")
 
 const config = {
   mode: 'development',
@@ -49,6 +50,7 @@ const config = {
     ]
   },
   plugins: [
+    new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       inject: 'body'

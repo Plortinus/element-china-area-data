@@ -1,13 +1,5 @@
 import REGION_DATA from 'china-area-data'
-
-// 深拷贝数组
-const cloneArray = function (obj) {
-  const newArray = []
-  for (const i in obj) {
-    newArray[i] = typeof obj[i] === 'object' ? cloneArray(obj[i]) : obj[i]
-  }
-  return newArray
-}
+import cloneDeep from 'lodash/cloneDeep'
 
 // code转汉字大对象
 const CodeToText = {}
@@ -55,7 +47,7 @@ for (let i = 0, len = regionData.length; i < len; i++) {
     regionData[i].children = provinceChildren
   }
 }
-provinceAndCityData = cloneArray(regionData)
+provinceAndCityData = cloneDeep(regionData)
 
 // 计算区
 for (let i = 0, len = regionData.length; i < len; i++) {
@@ -84,7 +76,7 @@ for (let i = 0, len = regionData.length; i < len; i++) {
 }
 
 // 添加“全部”选项
-const provinceAndCityDataPlus = cloneArray(provinceAndCityData)
+const provinceAndCityDataPlus = cloneDeep(provinceAndCityData)
 provinceAndCityDataPlus.unshift({
   value: '',
   label: '全部'
@@ -109,7 +101,7 @@ for (let i = 0, len = provinceAndCityDataPlus.length; i < len; i++) {
   }
 }
 
-const regionDataPlus = cloneArray(regionData)
+const regionDataPlus = cloneDeep(regionData)
 regionDataPlus.unshift({
   value: '',
   label: '全部'

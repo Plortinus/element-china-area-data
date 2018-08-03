@@ -62,72 +62,79 @@
 </template>
 
 <script>
-  import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText, TextToCode } from '../dist/app.js'
+import {
+  provinceAndCityData,
+  regionData,
+  provinceAndCityDataPlus,
+  regionDataPlus,
+  CodeToText,
+  TextToCode
+} from "../dist/app.js";
 
-  export default {
-    data () {
-      return {
-        CodeToText,
-        TextToCode,
-        BeiJing: CodeToText['110000'],
-        provinceAndCityData,
-        provinceAndCityDataPlus,
-        regionData,
-        regionDataPlus,
-        selectedOptions1: ['110000', '110100'],
-        selectedOptions2: ['120000', '120100', '120101'],
-        selectedOptions3: ['130000', ''],
-        selectedOptions4: ['120000', '120100', '']
-      }
+export default {
+  data() {
+    return {
+      CodeToText,
+      TextToCode,
+      BeiJing: CodeToText["110000"],
+      provinceAndCityData,
+      provinceAndCityDataPlus,
+      regionData,
+      regionDataPlus,
+      selectedOptions1: ["110000", "110100"],
+      selectedOptions2: ["120000", "120100", "120101"],
+      selectedOptions3: ["130000", ""],
+      selectedOptions4: ["120000", "120100", ""]
+    };
+  },
+
+  methods: {
+    handleChange(value) {
+      console.log(value);
     },
-
-    methods: {
-      handleChange (value) {
-        console.log(value)
-      },
-      convertTextToCode (provinceText, cityText, regionText) {
-        let code = ''
-        if (provinceText && this.TextToCode[provinceText]) {
-          const province = this.TextToCode[provinceText]
-          code += province.code + ', '
-          if (cityText && province[cityText]) {
-            const city = province[cityText]
-            code += city.code + ', '
-            if (regionText && city[regionText]) {
-              code += city[regionText].code
-            }
+    convertTextToCode(provinceText, cityText, regionText) {
+      let code = "";
+      if (provinceText && this.TextToCode[provinceText]) {
+        const province = this.TextToCode[provinceText];
+        code += province.code + ", ";
+        if (cityText && province[cityText]) {
+          const city = province[cityText];
+          code += city.code + ", ";
+          if (regionText && city[regionText]) {
+            code += city[regionText].code;
           }
         }
-        return code
       }
-    },
-
-    mounted () {
-      console.log(this.TextToCode['北京市'].code)
-      console.log(this.TextToCode['北京市']['市辖区'].code)
-      console.log(this.TextToCode['北京市']['市辖区']['朝阳区'].code)
+      return code;
     }
+  },
+
+  mounted() {
+    console.log(this.TextToCode["北京市"].code);
+    console.log(this.TextToCode["北京市"]["市辖区"].code);
+    console.log(this.TextToCode["北京市"]["市辖区"]["朝阳区"].code);
   }
+};
 </script>
 
 <style>
-  .long {
-    width: 250px;
-  }
-  .area {
-    padding-top: 50px;
-    margin: 0 auto;
-    width: 800px;
-  }
-  .three {
-    margin-top: 100px;
-  }
-  .bind {
-    margin-top: 20px;
-    line-height: 40px;
-    text-indent: 15px;
-  }
-  .imp {
-    color: #409EFF;
-  }
+.long {
+  width: 250px;
+}
+.area {
+  padding-top: 50px;
+  margin: 0 auto;
+  width: 800px;
+}
+.three {
+  margin-top: 100px;
+}
+.bind {
+  margin-top: 20px;
+  line-height: 40px;
+  text-indent: 15px;
+}
+.imp {
+  color: #409eff;
+}
 </style>
