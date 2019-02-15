@@ -168,4 +168,4 @@ value是区域码`"110000"`
 
 `npm run dev` 是开发
 
-`npm run build` + `npm run docs` 是准备发布
+`npm run build` + `npm run build-commonjs` + `npm run docs` 是准备发布
