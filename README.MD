@@ -162,7 +162,7 @@ value是区域码`"110000"`
 
 ## 数据来源
 
-[china-area-data v4.0.0](https://github.com/airyland/china-area-data)
+[china-area-data v5.0.0](https://github.com/airyland/china-area-data)
 
 ## 开发过程
 
