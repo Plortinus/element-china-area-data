@@ -32,16 +32,8 @@ const config = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: {
-              root: resolve(__dirname, 'src'),
-              attrs: ['img:src', 'link:href']
-            }
-          }
-        ]
+        test: /\.html$/i,
+        loader: 'html-loader',
       },
       {
         test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
