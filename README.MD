@@ -16,6 +16,10 @@
 ```js
 import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText, TextToCode } from 'element-china-area-data'
 ```
+服务端用法：
+```js
+const { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText, TextToCode } = require('element-china-area-data/dist/app.commonjs')
+```
 
   1. `provinceAndCityData`是省市二级联动数据（不带“全部”选项）
   2. `regionData`是省市区三级联动数据（不带“全部”选项）
