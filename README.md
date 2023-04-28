@@ -8,7 +8,7 @@
 1. 去掉了 provinceAndCityDataPlus/regionDataPlus/TextToCode
 2. CodeToText 修改为 codeToText
 3. 添加了纯汉字的数据对象 pcTextArr 和 pcaTextArr
-4. 不再支持港澳台
+4. 不再支持港澳台，使用新的数据源https://github.com/modood/Administrative-divisions-of-China
 
 ## 旧版本 v5.0.2
 
