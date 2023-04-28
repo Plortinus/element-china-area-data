@@ -111,10 +111,10 @@
   <script src="../dist/element-china-area-data.iife.js"></script>
   <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-  <script >
+  <script>
     new Vue({
-      el: '#app',
-      data: function() {
+      el: "#app",
+      data: function () {
         return {
           visible: false,
           codeToText: elementChinaAreaData.codeToText,
@@ -122,12 +122,12 @@
           pcTextArr: elementChinaAreaData.pcTextArr,
           regionData: elementChinaAreaData.regionData,
           pcaTextArr: elementChinaAreaData.pcaTextArr,
-          selectedOptions1: ['11', '110101'],
-          selectedOptions2: ['12', '1201', '120101'],
-          selectedOptions3: ['北京市', '朝阳区'],
-          selectedOptions4: ['北京市', '市辖区', '朝阳区']
-        }
-      }
-    })
+          selectedOptions1: ["11", "110101"],
+          selectedOptions2: ["12", "1201", "120101"],
+          selectedOptions3: ["北京市", "朝阳区"],
+          selectedOptions4: ["北京市", "市辖区", "朝阳区"],
+        };
+      },
+    });
   </script>
 </html>

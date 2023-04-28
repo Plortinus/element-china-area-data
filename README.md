@@ -2,104 +2,87 @@
 
 [![npm](https://img.shields.io/npm/v/element-china-area-data.svg)](https://www.npmjs.com/package/element-china-area-data) [![npm](https://img.shields.io/npm/dt/element-china-area-data.svg)](https://www.npmjs.com/package/element-china-area-data)
 
-## v6改动
+## v6 改动
 
-  0. 改用全新脚手架构建，同时支持 CommonJS 和 ESM modules
-  1. 去掉了provinceAndCityDataPlus/regionDataPlus/TextToCode
-  2. CodeToText修改为codeToText
-  3. 添加了纯汉字的数据对象pcTextArr和pcaTextArr
-  4. 不再支持港澳台
-## 旧版本v5.0.2
+0. 改用全新脚手架构建，同时支持 CommonJS 和 ESM modules
+1. 去掉了 provinceAndCityDataPlus/regionDataPlus/TextToCode
+2. CodeToText 修改为 codeToText
+3. 添加了纯汉字的数据对象 pcTextArr 和 pcaTextArr
+4. 不再支持港澳台
+
+## 旧版本 v5.0.2
+
 [文档地址](./V5.MD)
 
 ## 安装
 
-  `npm install element-china-area-data -S`
+`npm install element-china-area-data -S`
 
 [在线示例](https://plortinus.github.io/element-china-area-data/index.html)
 
 ## 使用
 
 ```js
-import { provinceAndCityData, pcTextArr, regionData, pcaTextArr, codeToText } from 'element-china-area-data'
+import {
+  provinceAndCityData,
+  pcTextArr,
+  regionData,
+  pcaTextArr,
+  codeToText,
+} from "element-china-area-data";
 ```
 
-  1. `provinceAndCityData`省市二级联动数据,汉字+code
-  2. `regionData`省市区三级联动数据
-  3. `pcTextArr`省市联动数据，纯汉字
-  4. `pcaTextArr`省市区联动数据，纯汉字
-  5. `codeToText`是个大对象，属性是区域码，属性值是汉字 用法例如：`codeToText['110000']`输出`北京市`
+1. `provinceAndCityData`省市二级联动数据,汉字+code
+2. `regionData`省市区三级联动数据
+3. `pcTextArr`省市联动数据，纯汉字
+4. `pcaTextArr`省市区联动数据，纯汉字
+5. `codeToText`是个大对象，属性是区域码，属性值是汉字 用法例如：`codeToText['110000']`输出`北京市`
 
+- 省市二级联动:
 
-  * 省市二级联动:
-    ```js
-    <template>
-      <div id="app">
-        <el-cascader
-          size="large"
-          :options="provinceAndCityData"
-          v-model="selectedOptions">
-        </el-cascader>
-      </div>
-    </template>
+  ```js
+  <template>
+    <div id="app">
+      <el-cascader
+        size="large"
+        :options="provinceAndCityData"
+        v-model="selectedOptions">
+      </el-cascader>
+    </div>
+  </template>
 
-    <script>
-      import { provinceAndCityData } from 'element-china-area-data'
-      export default {
-        data () {
-          return {
-            provinceAndCityData,
-            selectedOptions: []
-          }
-        },
-      }
-    </script>
-    ```
-
-    * 省市二级联动,纯汉字:
-      ```js
-      <template>
-        <div id="app">
-          <el-cascader
-            size="large"
-            :options="pcTextArr"
-            v-model="selectedOptions">
-          </el-cascader>
-        </div>
-      </template>
-
-      <script>
-        import { pcTextArr } from 'element-china-area-data'
-        export default {
-          data () {
-            return {
-              pcTextArr,
-              selectedOptions: []
-            }
-          },
+  <script>
+    import { provinceAndCityData } from 'element-china-area-data'
+    export default {
+      data () {
+        return {
+          provinceAndCityData,
+          selectedOptions: []
         }
-      </script>
-      ```
+      },
+    }
+  </script>
+  ```
 
-    * 省市区三级联动
+  - 省市二级联动,纯汉字:
 
     ```js
     <template>
       <div id="app">
         <el-cascader
           size="large"
-          :options="regionData"
+          :options="pcTextArr"
           v-model="selectedOptions">
         </el-cascader>
       </div>
     </template>
 
     <script>
-      import { regionData } from 'element-china-area-data'
+      import { pcTextArr } from 'element-china-area-data'
       export default {
         data () {
           return {
-            regionData,
+            pcTextArr,
             selectedOptions: []
           }
         },
@@ -107,31 +90,57 @@ import { provinceAndCityData, pcTextArr, regionData, pcaTextArr, codeToText } fr
     </script>
     ```
 
-    * 省市区三级联动，纯汉字
+  - 省市区三级联动
 
-    ```js
-    <template>
-      <div id="app">
-        <el-cascader
-          size="large"
-          :options="pcaTextArr"
-          v-model="selectedOptions">
-        </el-cascader>
-      </div>
-    </template>
+  ```js
+  <template>
+    <div id="app">
+      <el-cascader
+        size="large"
+        :options="regionData"
+        v-model="selectedOptions">
+      </el-cascader>
+    </div>
+  </template>
 
-    <script>
-      import { pcaTextArr } from 'element-china-area-data'
-      export default {
-        data () {
-          return {
-            pcaTextArr,
-            selectedOptions: []
-          }
-        },
-      }
-    </script>
-    ```
+  <script>
+    import { regionData } from 'element-china-area-data'
+    export default {
+      data () {
+        return {
+          regionData,
+          selectedOptions: []
+        }
+      },
+    }
+  </script>
+  ```
+
+  - 省市区三级联动，纯汉字
+
+  ```js
+  <template>
+    <div id="app">
+      <el-cascader
+        size="large"
+        :options="pcaTextArr"
+        v-model="selectedOptions">
+      </el-cascader>
+    </div>
+  </template>
+
+  <script>
+    import { pcaTextArr } from 'element-china-area-data'
+    export default {
+      data () {
+        return {
+          pcaTextArr,
+          selectedOptions: []
+        }
+      },
+    }
+  </script>
+  ```
 
 ## 数据来源
 
