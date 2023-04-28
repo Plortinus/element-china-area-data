@@ -2,9 +2,6 @@
 
 [![npm](https://img.shields.io/npm/v/element-china-area-data.svg)](https://www.npmjs.com/package/element-china-area-data) [![npm](https://img.shields.io/npm/dt/element-china-area-data.svg)](https://www.npmjs.com/package/element-china-area-data)
 
-
-## 旧版本v5.0.2
-
 ## v6改动
 
   0. 改用全新脚手架构建，同时支持 CommonJS 和 ESM modules
@@ -12,7 +9,7 @@
   2. CodeToText修改为codeToText
   3. 添加了纯汉字的数据对象pcTextArr和pcaTextArr
   4. 不再支持港澳台
-
+## 旧版本v5.0.2
 [文档地址](./V5.MD)
 
 ## 安装
