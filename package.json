@@ -1,6 +1,6 @@
 {
   "name": "element-china-area-data",
-  "private": true,
+  "private": false,
   "version": "6.0.0",
   "main": "./dist/element-china-area-data.cjs",
   "module": "./dist/element-china-area-data.mjs",
