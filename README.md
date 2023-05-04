@@ -20,7 +20,7 @@
 
 [在线示例](https://plortinus.github.io/element-china-area-data/index.html)
 
-## 使用
+## import使用
 
 ```js
 import {
@@ -64,7 +64,7 @@ import {
   </script>
   ```
 
-  - 省市二级联动,纯汉字:
+- 省市二级联动,纯汉字:
 
     ```js
     <template>
@@ -90,7 +90,7 @@ import {
     </script>
     ```
 
-  - 省市区三级联动
+- 省市区三级联动
 
   ```js
   <template>
@@ -116,7 +116,7 @@ import {
   </script>
   ```
 
-  - 省市区三级联动，纯汉字
+- 省市区三级联动，纯汉字
 
   ```js
   <template>
@@ -139,6 +139,30 @@ import {
         }
       },
     }
+  </script>
+  ```
+
+## script引入
+
+  ```html
+  <script src="https://unpkg.com/element-china-area-data@6.0.0/dist/element-china-area-data.iife.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: function () {
+        return {
+          codeToText: elementChinaAreaData.codeToText,
+          provinceAndCityData: elementChinaAreaData.provinceAndCityData,
+          pcTextArr: elementChinaAreaData.pcTextArr,
+          regionData: elementChinaAreaData.regionData,
+          pcaTextArr: elementChinaAreaData.pcaTextArr,
+          selectedOptions1: ["11", "110101"],
+          selectedOptions2: ["12", "1201", "120101"],
+          selectedOptions3: ["北京市", "朝阳区"],
+          selectedOptions4: ["北京市", "市辖区", "朝阳区"],
+        };
+      },
+    });
   </script>
   ```
 
