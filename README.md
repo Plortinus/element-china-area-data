@@ -20,7 +20,7 @@
 
 [在线示例](https://plortinus.github.io/element-china-area-data/index.html)
 
-## import使用
+## import 使用
 
 ```js
 import {
@@ -66,29 +66,29 @@ import {
 
 - 省市二级联动,纯汉字:
 
-    ```js
-    <template>
-      <div id="app">
-        <el-cascader
-          size="large"
-          :options="pcTextArr"
-          v-model="selectedOptions">
-        </el-cascader>
-      </div>
-    </template>
+  ```js
+  <template>
+    <div id="app">
+      <el-cascader
+        size="large"
+        :options="pcTextArr"
+        v-model="selectedOptions">
+      </el-cascader>
+    </div>
+  </template>
 
-    <script>
-      import { pcTextArr } from 'element-china-area-data'
-      export default {
-        data () {
-          return {
-            pcTextArr,
-            selectedOptions: []
-          }
-        },
-      }
-    </script>
-    ```
+  <script>
+    import { pcTextArr } from 'element-china-area-data'
+    export default {
+      data () {
+        return {
+          pcTextArr,
+          selectedOptions: []
+        }
+      },
+    }
+  </script>
+  ```
 
 - 省市区三级联动
 
@@ -142,29 +142,29 @@ import {
   </script>
   ```
 
-## script引入
+## script 引入
 
-  ```html
-  <script src="https://unpkg.com/element-china-area-data@6.0.0/dist/element-china-area-data.iife.js"></script>
-  <script>
-    new Vue({
-      el: "#app",
-      data: function () {
-        return {
-          codeToText: elementChinaAreaData.codeToText,
-          provinceAndCityData: elementChinaAreaData.provinceAndCityData,
-          pcTextArr: elementChinaAreaData.pcTextArr,
-          regionData: elementChinaAreaData.regionData,
-          pcaTextArr: elementChinaAreaData.pcaTextArr,
-          selectedOptions1: ["11", "110101"],
-          selectedOptions2: ["12", "1201", "120101"],
-          selectedOptions3: ["北京市", "朝阳区"],
-          selectedOptions4: ["北京市", "市辖区", "朝阳区"],
-        };
-      },
-    });
-  </script>
-  ```
+```html
+<script src="https://unpkg.com/element-china-area-data@6.0.0/dist/element-china-area-data.iife.js"></script>
+<script>
+  new Vue({
+    el: "#app",
+    data: function () {
+      return {
+        codeToText: elementChinaAreaData.codeToText,
+        provinceAndCityData: elementChinaAreaData.provinceAndCityData,
+        pcTextArr: elementChinaAreaData.pcTextArr,
+        regionData: elementChinaAreaData.regionData,
+        pcaTextArr: elementChinaAreaData.pcaTextArr,
+        selectedOptions1: ["11", "110101"],
+        selectedOptions2: ["12", "1201", "120101"],
+        selectedOptions3: ["北京市", "朝阳区"],
+        selectedOptions4: ["北京市", "市辖区", "朝阳区"],
+      };
+    },
+  });
+</script>
+```
 
 ## 数据来源
 
