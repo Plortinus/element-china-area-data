@@ -21,9 +21,4 @@ jobs:
 
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v1
-        env: 
-          COVERALLS_SERVICE_NAME: 'GitHub CI'
-          COVERALLS_GIT_BRANCH: master
-          COVERALLS_REPO_TOKEN : 6vLkeEOaQa0X4m8MAu1B0l6oMD1uJbI2I
-          NODE_COVERALLS_DEBUG: 0 # or 1 for verbsoe
 
