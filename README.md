@@ -2,6 +2,10 @@
 
 [![npm](https://img.shields.io/npm/v/element-china-area-data.svg)](https://www.npmjs.com/package/element-china-area-data) ![npm](https://img.shields.io/npm/dw/element-china-area-data) ![GitHub top language](https://img.shields.io/github/languages/top/Plortinus/element-china-area-data) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/element-china-area-data) ![GitHub](https://img.shields.io/github/license/Plortinus/element-china-area-data)
 
+## 演示效果gif
+![20230508-093525](https://user-images.githubusercontent.com/20693993/236715340-09fb0820-781b-4faf-8a0f-3f24012d8213.gif)
+
+
 ## v6 改动
 
 0. 改用全新脚手架构建，同时支持 CommonJS 和 ESM modules
