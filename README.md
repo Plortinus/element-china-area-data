@@ -1,6 +1,6 @@
 # Element UI 中国省市区级联数据
 
-[![npm](https://img.shields.io/npm/v/element-china-area-data.svg)](https://www.npmjs.com/package/element-china-area-data) [![npm](https://img.shields.io/npm/dt/element-china-area-data.svg)](https://www.npmjs.com/package/element-china-area-data) [![Coverage Status](https://coveralls.io/repos/github/Plortinus/element-china-area-data/badge.svg?branch=master)](https://coveralls.io/github/Plortinus/element-china-area-data?branch=master)
+[![npm](https://img.shields.io/npm/v/element-china-area-data.svg)](https://www.npmjs.com/package/element-china-area-data) ![npm](https://img.shields.io/npm/dw/element-china-area-data) ![GitHub top language](https://img.shields.io/github/languages/top/Plortinus/element-china-area-data) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/element-china-area-data) ![GitHub](https://img.shields.io/github/license/Plortinus/element-china-area-data)
 
 ## v6 改动
 
