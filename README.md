@@ -20,7 +20,9 @@
 
 ## 安装
 
-`npm install element-china-area-data -S`
+```bash
+npm install element-china-area-data -S
+```
 
 [在线示例](https://plortinus.github.io/element-china-area-data/index.html)
 
