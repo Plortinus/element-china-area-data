@@ -1,7 +1,7 @@
 {
   "name": "element-china-area-data",
   "private": false,
-  "version": "6.0.2",
+  "version": "6.1.0",
   "main": "./dist/element-china-area-data.cjs",
   "module": "./dist/element-china-area-data.mjs",
   "types": "./dist/element-china-area-data.d.ts",
@@ -44,7 +44,7 @@
   },
   "homepage": "https://github.com/Plortinus/element-china-area-data#readme",
   "dependencies": {
-    "china-division": "^2.6.1"
+    "china-division": "^2.7.0"
   },
   "devDependencies": {
     "@types/jsdom": "^20.0.1",
