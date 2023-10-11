@@ -6,17 +6,6 @@
 
 ![20230508-093525](https://user-images.githubusercontent.com/20693993/236715340-09fb0820-781b-4faf-8a0f-3f24012d8213.gif)
 
-## v6 改动
-
-0. 改用全新脚手架构建，同时支持 CommonJS 和 ESM modules
-1. 去掉了 provinceAndCityDataPlus/regionDataPlus/TextToCode，全选功能请利用级联组件自身的
-2. CodeToText 修改为 codeToText
-3. 添加了纯汉字的数据对象 pcTextArr 和 pcaTextArr
-4. 不再支持港澳台，使用新的数据源https://github.com/modood/Administrative-divisions-of-China
-
-## 旧版本 v5.0.2
-
-[文档地址](./V5.MD)
 
 ## 安装
 
@@ -172,6 +161,17 @@ import {
 </script>
 ```
 
+## v6 改动
+
+0. 改用全新脚手架构建，同时支持 CommonJS 和 ESM modules
+1. 去掉了 provinceAndCityDataPlus/regionDataPlus/TextToCode，全选功能请利用级联组件自身的
+2. CodeToText 修改为 codeToText
+3. 添加了纯汉字的数据对象 pcTextArr 和 pcaTextArr
+4. 不再支持港澳台，使用新的数据源https://github.com/modood/Administrative-divisions-of-China
+
+## 旧版本 v5.0.2
+
+[文档地址](./V5.MD)
 ## 数据来源
 
 [Administrative-divisions-of-China](https://github.com/modood/Administrative-divisions-of-China)
