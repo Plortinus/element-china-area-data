@@ -4,9 +4,11 @@ import pc from "china-division/dist/pc.json";
 import pca from "china-division/dist/pca.json";
 
 interface DataItem {
-  value: string;
+  value: string | number;
   label: string;
   children?: DataItem[];
+  disabled?: boolean;
+  leaf?: boolean;
 }
 
 const formatData = (data: any[]): DataItem[] => {
